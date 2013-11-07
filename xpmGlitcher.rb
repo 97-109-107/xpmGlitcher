@@ -188,7 +188,10 @@ def xpm(input, convert, options, outputCount)
       u = (0..1).map{65.+(rand(25)).chr}.join.to_s.upcase
       suffix = Time.now.to_i.to_s.split(//).last(5).push(u).join
       system("convert export.xpm #{@fileName}-x-#{mode}-#{suffix}.png")
-      system("rm import.xpm export.xpm")
+      if input == "import.xpm"
+        system("rm import.xpm")
+      end
+      system("rm export.xpm")
       puts "#{@fileName}-x-#{mode}-#{suffix}.png"
     end
   end
