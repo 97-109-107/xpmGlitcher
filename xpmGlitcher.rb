@@ -34,7 +34,7 @@ def xpm(input, options, outputCount)
   # outputCount = outputCount ? nil : 1
   outputCount == nil ? outputCount=1 : nil
   outputCount = outputCount.to_i-1
-  xpmHeader, xpmBody, xpmBodyTemp = Array.new,Array.new,Array.new
+  xpmHeader, xpmBody = Array.new,Array.new
   if input == nil
     puts @@usage
     return
@@ -61,18 +61,20 @@ def xpm(input, options, outputCount)
     end
   end
 
+  0.upto(outputCount).each do |outputs|
+  xpmBodyTemp = Array.new
   xpmBody.each do |a|
     xpmBodyTemp << a[1..a.length-4].scan(/../)
   end
   width = xpmBodyTemp[1].length.to_i
   height = xpmBodyTemp.length.to_i
 
-  0.upto(outputCount).each do |outputs|
   if options.mode == nil 
     mode = ["A","B","C","D","E"].sample
   else
     mode = options.mode.upcase
   end
+  puts 'mode '+mode
     case mode
      when "A"
       #   # MODE SORT
