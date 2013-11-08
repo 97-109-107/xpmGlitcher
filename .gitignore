@@ -5,6 +5,9 @@ Session.vim
 .netrwhist
 *~
 export.xpm
+*.png
+*.xpm
+*.jpg
 
 
 ### Ruby ###
