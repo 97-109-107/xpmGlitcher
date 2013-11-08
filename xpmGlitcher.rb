@@ -62,21 +62,21 @@ def xpm(input, options, outputCount)
   end
 
   0.upto(outputCount).each do |outputs|
-  xpmBodyTemp = Array.new
-  xpmBody.each do |a|
-    xpmBodyTemp << a[1..a.length-4].scan(/../)
-  end
-  width = xpmBodyTemp[1].length.to_i
-  height = xpmBodyTemp.length.to_i
+    xpmBodyTemp = Array.new
+    xpmBody.each do |a|
+      xpmBodyTemp << a[1..a.length-4].scan(/../)
+    end
+    width = xpmBodyTemp[1].length.to_i
+    height = xpmBodyTemp.length.to_i
 
-  if options.mode == nil 
-    mode = ["A","B","C","D","E"].sample
-  else
-    mode = options.mode.upcase
-  end
-  puts 'mode '+mode
+    if options.mode == nil 
+      mode = ["A","B","C","D","E"].sample
+    else
+      mode = options.mode.upcase
+    end
+
     case mode
-     when "A"
+    when "A"
       #   # MODE SORT
       xpmBodyTemp.each_with_index do |a,i|
         xpmBodyTemp[i]=a.sort
