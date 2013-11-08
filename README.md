@@ -2,7 +2,7 @@
 
 The ruby-answer to cliché glitches
 
-examples: [XpmGlitcher][1]
+examples: [xpmGlitcher][1]
 
 #### requirements ####
 
@@ -20,5 +20,5 @@ examples: [XpmGlitcher][1]
 Might be fruitful (as much as making glitches could be) to load all the *pixels* into one row and only after processing divide them back into original (or scaled) rows.
 
 
-  [1]: www.kaniowski.info/XpmGlitcher
+  [1]: http://www.kaniowski.info/XpmGlitcher/
   [2]: http://www.imagemagick.org/
