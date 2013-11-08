@@ -35,11 +35,6 @@ def xpm(input, options, outputCount)
   outputCount == nil ? outputCount=1 : nil
   outputCount = outputCount.to_i-1
   xpmHeader, xpmBody, xpmBodyTemp = Array.new,Array.new,Array.new
-  if options.mode == nil 
-    mode = ["A","B","C","D","E"].sample
-  else
-    mode = options.mode.upcase
-  end
   if input == nil
     puts @@usage
     return
@@ -73,6 +68,11 @@ def xpm(input, options, outputCount)
   height = xpmBodyTemp.length.to_i
 
   0.upto(outputCount).each do |outputs|
+  if options.mode == nil 
+    mode = ["A","B","C","D","E"].sample
+  else
+    mode = options.mode.upcase
+  end
     case mode
      when "A"
       #   # MODE SORT
@@ -189,13 +189,11 @@ def xpm(input, options, outputCount)
       u = (0..1).map{65.+(rand(25)).chr}.join.to_s.upcase
       suffix = Time.now.to_i.to_s.split(//).last(5).push(u).join
       system("convert export.xpm #{@fileName}-x-#{mode}-#{suffix}.png")
-      if input != "import.xpm"
-        system("rm import.xpm")
-      end
-      system("rm export.xpm")
       puts "#{@fileName}-x-#{mode}-#{suffix}.png"
     end
   end
 end
 
 xpm(ARGV[0], @@options, ARGV[1])
+system("rm import.xpm")
+system("rm export.xpm")
