@@ -118,12 +118,12 @@ def xpm(input, options, outputCount)
       #MODE X
       multiplier = range(3,20)
       barWidth = width/multiplier 
+      tempCollection = Array.new
+      x = 0
 
-      0.upto(multiplier).each_with_index do |multiplier, i|
+      multiplier.downto(0).each_with_index do |multiplier, i|
         slant = range(0,4)
         slant = 2
-        x = 0
-        tempCollection = Array.new
 
         xpmBodyTemp.each_with_index do |line,l|
           if width>height
@@ -133,7 +133,7 @@ def xpm(input, options, outputCount)
             x = height-(height/width*slant*width/height);
             x = height-x
           end
-          x = x + barWidth*multiplier
+          x = x - barWidth*i
 
           for v in (-barWidth/2..barWidth/2)
             tempCollection << line[x+v]
@@ -148,7 +148,7 @@ def xpm(input, options, outputCount)
             end
           end
 
-          xpmBody[slant]=line
+          # xpmBody[slant]=line
           # slant+=slant
         end
 
