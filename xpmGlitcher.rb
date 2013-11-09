@@ -172,7 +172,7 @@ def xpm(input, options, outputCount)
       end
     end
 
-    File.open(@filePath+'/export.xpm', 'w') do |xpm|
+    File.open('export.xpm', 'w') do |xpm|
       xpm.puts xpmHeader
       xpmBodyTemp.each_with_index do |line,s|
         if line.length>0
