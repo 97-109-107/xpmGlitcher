@@ -8,7 +8,7 @@ examples: [xpmGlitcher][1]
 
  - ruby > 1.8.7 (tested on 1.9.2)
  - imagemagick ([imagemagick)][2]
- - bindata gem [3] ([sudo] gem install bindata)
+ - ([bindata gem)][3] ([sudo] gem install bindata)
 
 #### usage ####
 `ruby xpmglitch.rb [mode] <inputfile> [output count]"`
