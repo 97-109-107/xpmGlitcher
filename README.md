@@ -8,7 +8,7 @@ examples: [xpmGlitcher][1]
 
  - ruby > 1.8.7 (tested on 1.9.2)
  - imagemagick ([imagemagick)][2]
- - bindata
+ - bindata gem [3] ([sudo] gem install bindata)
 
 #### usage ####
 `ruby xpmglitch.rb [mode] <inputfile> [output count]"`
@@ -23,3 +23,4 @@ Might be fruitful (as much as making glitches could be) to load all the *pixels*
 
   [1]: http://www.kaniowski.info/XpmGlitcher/
   [2]: http://www.imagemagick.org/
+  [3]: http://rubygems.org/gems/bindata
