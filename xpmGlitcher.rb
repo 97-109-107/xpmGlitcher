@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'bindata'
 require 'optparse'
 require 'ostruct'
